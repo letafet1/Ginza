@@ -1,0 +1,765 @@
+@import "variables";
+@import "mixins";
+@import "reset";
+@import "extend";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+
+.header {
+    width: 100%;
+    //height: 1000px;
+    row-gap: 60px;
+    background: url(../assets/img/pexels-chevanon.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    @include mobile {
+        overflow: hidden;
+    }
+
+    // .header__nav
+    &__nav {
+        margin-top: 28px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
+        flex-direction: column;
+        @include mobile{
+            display: flex;
+            flex-direction: row;
+            column-gap: 500px;
+        }
+    }
+    
+
+    // .header__nav--logo
+
+    &__nav--logo {
+        font-size: 38px;
+        color: white;
+      
+    }
+
+    &__menu {
+        display:none; 
+        @include mobile{
+            display: inline;
+        }
+    }
+
+    // .header__nav--list
+
+    &__nav--list {
+        display: flex;
+        column-gap: 20px;
+        @include mobile{
+            display: none;
+        }
+    }
+
+    // .header__nav--list--colums
+
+    &__nav--list--colums {
+        font-size: 22px;
+    }
+
+    // .header__nav--list---link
+
+    &__nav--list---link {
+        color: white;
+    }
+
+    // .header__center
+
+    &__center {
+        width: 60%;
+        margin: auto;
+        text-align: center;
+        color: #fff;
+    }
+
+    // .header__center--text
+
+    &__center--text {
+        font-size: 100px;
+        @include mobile{
+            font-size: 59px;
+        }
+    }
+
+    // .header__icon
+
+    &__icon {
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}
+//we start main section
+.main {
+    width: 100%;
+    display: flex;
+    justify-content:space-arund;
+    margin-bottom: 110px;
+    margin-top: 110px;
+    @include mobile{
+        display: none;
+    }
+
+}
+
+.main__image {
+    width: 45%;
+    margin-left: 10%;
+    @include mobile{
+        display: none;
+    }
+}
+
+.main__img {
+    object-fit: cover;
+    width: 100%;
+    //height: 100%;
+    @include mobile{
+        display: none;
+    }
+}
+
+.main__explain {
+    margin-right: 10%;
+    margin-left: 10%;
+    width: 40%;
+    margin-bottom: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 110px;
+    row-gap: 40px;
+    @include mobile{
+        display: none;
+    }
+    
+}
+@include mobile{
+    .main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 110px;
+        margin-top: 110px;
+        align-items: center;
+    
+    }
+    .main__explain{
+        align-items: center;
+        width: 80%;
+        margin-bottom: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 110px;
+        row-gap: 40px;
+    }
+}
+
+
+.main__head {
+    width: 80%;
+    font-size: 48px;
+    font-weight: 500px;
+}
+
+.main__text {
+    width: 80%;
+    font-size: 30px;
+    line-height: 33px;
+}
+
+.button__button {
+    background-color: #fff;
+    width: 150px;
+    height: 46px;
+    border: 1px solid;
+    outline: none;
+    cursor: pointer;
+}
+
+.button__button:hover {
+    background-color: rgb(3, 3, 3);
+
+    .button__link {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+}
+.button__link {
+    color: #000;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.main__images {
+    width: 45%;
+    margin-left: 10%;
+    display: none;
+}
+
+.main__imgs {
+    object-fit: cover;
+    width: 100%;
+    //height: 100%;
+    display: none;
+
+}
+@include mobile{
+    .main__images {
+        width: 80%;
+        margin-left: 0%;
+        display: flex;       
+    }
+    
+    .main__imgs {
+        object-fit: cover;
+        width: 100%;
+        display: flex;    
+    }
+    
+}
+
+//we start papular section
+#papular--container {
+    width: 100%;
+    display: flex;
+    //height: 1100px;
+    justify-content: center;
+    margin: auto;
+    background-color: #f7f3f3;
+    flex-direction: column;
+}
+
+.papular__head--container {
+    width: 80%;
+    //height: 0%;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    @extend %d-flex;
+
+}
+
+.papular__head {
+    font-size: 58px;
+    font-weight: 500;
+    letter-spacing: 0.4;
+    @include mobile{
+        font-size: 40px;
+        font-weight: 300;
+    }
+}
+
+.papular__card--container {
+    width: 80%;
+    //height: 704px;
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    @include mobile{
+        display: none;
+    }
+}
+@include mobile{
+    .papular__card--container {
+        width: 80%;
+        //height: 704px;
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: auto;
+        row-gap: 70px;
+    }
+}
+.papular__card {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    @include mobile{
+        width: 100%;
+    }
+}
+
+.papular__image--container {
+    width: 100%;
+    //height: 62%;
+}
+
+.papular__img {
+    width: 100%;
+    //height: 100%;
+    object-fit: cover;
+}
+
+.papular__info--container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.papular__name {
+    font-size: 40px;
+}
+
+.papular__price {
+    font-size: 40px;
+}
+
+.papular__info {
+    width: 85%;
+    text-align: left;
+    font-size: 20px;
+    @include mobile{
+        width: 100%;
+        font-size: 26px;
+    }
+}
+
+.papular__button--container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2%;
+
+}
+
+.papular__button {
+    background-color: #fff;
+    width: 150px;
+    height: 46px;
+    border: 1px solid;
+    outline: none;
+    cursor: pointer;
+}
+.papular__link {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+.papular__button:hover {
+    background-color: rgb(3, 3, 3);
+
+    .papular__link {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+//start magazin cards
+.magazin {
+    width: 100%;
+    padding: 110px 0px;
+    @include mobile{
+        padding: 60px 0px;
+    }
+}
+.magazin__card {
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    @include mobile{
+        display: none;
+    }
+}
+@include mobile{
+    .magazin__card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.magazin__info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 50px;
+    @include mobile{
+        display: none;
+    }
+}
+.magazin__title {
+    font-size: 47px;
+    font-weight: 500;
+    line-height: 50px;
+    @include mobile{
+        display: none;
+    }
+
+}
+.magazin__text {
+    font-size: 21px;
+    line-height: 27px;
+    @include mobile{
+        display: none;
+        font-size: 26px;
+    }
+}
+.magazin__image--container {
+    width: 45%;
+    @include mobile{
+        display: none;
+    }
+}
+.magazin__image {
+    width: 100%;
+    object-fit: cover;
+    @include mobile{
+        display: none;
+    }
+}
+.magazin__images--container {
+    width: 45%;
+    display: none;
+   
+}
+.magazin__images {
+    width: 100%;
+    object-fit: cover;
+    display: none;
+
+}
+@include mobile{
+    .magazin__images--container {
+        width: 90%;
+        display: flex;
+    }
+    .magazin__images {
+        width: 100%;
+        object-fit: cover;
+        display: flex;
+    }
+    .magazin__info {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 13px;
+    }
+    .magazin__title {
+        font-size: 41px;
+        font-weight: 500;
+        line-height: 50px;
+        display: flex;
+    }
+    .magazin__text {
+        font-size: 26px;
+        line-height: 27px;
+        display: flex;
+    }
+}
+//start glassman
+.magazin__card--glassman {
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    @include mobile{
+        flex-direction: column;
+        margin-top: 50px;
+        align-items: center;
+    }
+}
+.magazin__image--container_glassman {
+    width: 37%;
+    @include mobile{
+        width: 90%;
+    }
+}
+.magazin__image--glassman {
+    width: 100%;
+    object-fit: cover;
+}
+.magazin__info--glassman {
+    width: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 50px;
+    @include mobile{
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 13px;
+    }
+}
+
+.magazin__title--glassman {
+    font-size: 47px;
+    font-weight: 500;
+    line-height: 50px;
+    @include mobile{
+        font-size: 41px;
+        font-weight: 500;
+        line-height: 50px;
+    }
+}
+.magazin__text--glassman {
+    font-size: 21px;
+    line-height: 27px;
+    @include mobile{
+        font-size: 26px;
+        line-height: 27px;
+    }
+}
+
+//start dog
+.magazin__card--dog {
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    @include mobile{
+        flex-direction: column;
+        margin-top: 50px;
+        align-items: center;
+    }
+}
+.magazin__info--dog {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 50px;
+    @include mobile{
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 13px;
+    }
+}
+.magazin__title--dog {
+    font-size: 47px;
+    font-weight: 500;
+    line-height: 50px;
+    @include mobile{
+        font-size: 41px;
+        font-weight: 500;
+        line-height: 50px;
+    }
+
+}
+.magazin__text--dog {
+    font-size: 21px;
+    line-height: 27px;
+    @include mobile{
+        font-size: 26px;
+        line-height: 27px;
+    }
+
+}
+.magazin__image--container_dog {
+    width: 30%;
+    @include mobile{
+        display: none;
+    }
+}
+.magazin__image--dog {
+    width: 100%;
+    object-fit: cover;
+    @include mobile{
+        display: none;
+    }
+}
+.magazin__images--container_dog {
+    width: 90%;
+    display: none; 
+}
+
+.magazin__images--dog {
+    width: 100%;
+    object-fit: cover;
+    display: none;  
+}
+@include mobile{
+    .magazin__images--container_dog {
+        width: 90%;
+        display: flex;
+    }
+    .magazin__images--dog {
+        width: 100%;
+        object-fit: cover;
+        display: flex;
+    
+    }
+}
+
+//we start book section
+.Book {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f7f3f3;
+    padding-top: 130px;
+    padding-bottom: 130px;
+    row-gap: 61px;
+    @include mobile{
+        padding-top: 50px;
+        padding-bottom: 50px;
+        row-gap: 40px;
+    }
+}
+.Book__title--continer {
+    width: 40%;
+    line-height: 57px;
+    margin-left: 0%;
+    @include mobile{
+        width: 90%;
+    }
+
+}
+.Book__title--text {
+    font-size: 70px;
+    font-weight: 30%;
+    @include mobile{
+        font-size: 53px;
+    }
+}
+.Book__info--continer {
+    width: 50%;
+    @include mobile{
+        width: 90%;
+    }
+
+}
+.Book__info--line {
+    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+    @include mobile{
+        font-size: 25px;
+        line-height: 27px;
+    }
+}
+.Book__button {
+    background-color: #fff;
+    width: 150px;
+    height: 46px;
+    border: 1px solid;
+    outline: none;
+    cursor: pointer;
+}
+.Book__button--link {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.Book__button:hover {
+    background-color: rgb(3, 3, 3);
+
+    .Book__button--link {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+
+//we start footer
+.footer {
+    background-color: #000;
+    width: 100%;
+    display: flex;
+    //justify-content: space-around;
+    column-gap: 16%;
+    @include mobile{
+        flex-direction: column;
+    }
+}
+.footer__title--continer {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    margin-top: 150px;
+    margin-left: 10%;
+    @include mobile{
+        margin-bottom: 70px;
+        margin-top: 50px;
+        margin-left: 8%
+    }
+}
+.footer__logo {
+    font-size: 43px;
+    color: white;
+}
+.footer__icon {
+    display: flex;
+    column-gap: 14px;
+}
+.Book__list--continer {
+    margin-top: 162px;
+    margin-bottom: 70px;
+    font-size: 19px;
+    column-gap: 20%;
+    display: flex;
+    margin-right: 300px;
+    @include mobile{
+        display: none;
+    }
+}
+@include mobile{
+    .Book__list--continer {
+        width: 40%;
+        row-gap: 30px;
+        margin-top: 0px;
+        margin-bottom: 70px;
+        font-size: 26px;
+        column-gap: 20%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 8%;
+    }
+}
+.footer__link {
+    color: #fff;
+}
+.footer__link--title {
+    margin-bottom: 20px;
+    color: #fff;
+}
+.footer__link--list {
+    color: #fff;
+}
+.Contact {
+    color: #fff;
+}
+.Contact__title {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.Contact__list {
+    color: #fff;
+    width: 186%;
+    font-size: 17px;
+    @include mobile{
+        font-size: 26px;
+    }
+}
