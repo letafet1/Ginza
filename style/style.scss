@@ -41,6 +41,9 @@ body {
             flex-direction: row;
             column-gap: 500px;
         }
+        @include extra_small_device{
+            column-gap: 240px !important;
+        }
     }
     
 

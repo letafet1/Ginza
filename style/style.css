@@ -193,6 +193,13 @@ html, body {
   }
 }
 
+@media screen and (max-width: 575px) {
+  .header__nav {
+    -webkit-column-gap: 240px !important;
+            column-gap: 240px !important;
+  }
+}
+
 .header__nav--logo {
   font-size: 38px;
   color: white;
